@@ -77,7 +77,7 @@ namespace CheckBannedId
         public bool SetAccountBanned(int id)
         {
             OleDbCommand sql = _conn.CreateCommand();
-            sql.CommandText = "UPDATE Account SET `thread`=1 WHERE ID=" + id.ToString();
+            sql.CommandText = "UPDATE Account SET `thread`=0 WHERE ID=" + id.ToString();
             return sql.ExecuteNonQuery() >= 1;
         }
 
